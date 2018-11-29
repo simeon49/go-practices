@@ -4,11 +4,8 @@ import (
 	// "./cases"
 	// "./cases/functions"
 	// "./cases/structures"
-	// "./cases/interfaces"
+	"./cases/interfaces"
 	// "./cases/routines"
-	// "./tree"
-	// "./web_crawl"
-	"./demochain"
 )
 
 func main() {
@@ -20,7 +17,13 @@ func main() {
 	// functions.Fun02()
 	// functions.Fun03()
 	// structures.Struct01()
+	// structures.Struct02()
+	// structures.Json()
 	// interfaces.Interface01()
+	// interfaces.Interface02()
+	interfaces.Interface03()
+	// cases.Base01()
+	// cases.NewMake01()
 	// cases.Stringer()
 	// cases.Error01()
 	// cases.Error02()
@@ -28,6 +31,7 @@ func main() {
 	// cases.Reader02()
 	// cases.Rot13Reader()
 	// cases.Images01()
+	// cases.Gob()
 	// routines.Routine01()
 	// routines.Chan01()
 	// routines.Chan02()
@@ -35,7 +39,4 @@ func main() {
 	// routines.Chan04()
 	// routines.Chan05()
 	// routines.Sync01()
-	// tree.Run()
-	// web_crawl.Run()
-	demochain.Run()
 }

@@ -1,10 +1,12 @@
-package tree
+package main
 
 import (
 	"fmt"
+
+	"./core"
 )
 
-func doWalk(t *Tree, ch chan int) {
+func doWalk(t *core.Tree, ch chan int) {
 	if t.Left != nil {
 		doWalk(t.Left, ch)
 	}
@@ -14,7 +16,7 @@ func doWalk(t *Tree, ch chan int) {
 	}
 }
 
-func Walk(t *Tree, ch chan int) {
+func Walk(t *core.Tree, ch chan int) {
 	if t == nil {
 		close(ch)
 		return
@@ -23,7 +25,7 @@ func Walk(t *Tree, ch chan int) {
 	close(ch)
 }
 
-func Same(t1, t2 *Tree) bool {
+func Same(t1, t2 *core.Tree) bool {
 	ch1 := make(chan int)
 	ch2 := make(chan int)
 	go Walk(t1, ch1)
@@ -40,11 +42,11 @@ func Same(t1, t2 *Tree) bool {
 	}
 }
 
-func Run() {
-	// fmt.Println(New(1))
-	// fmt.Println(New(2))
+func main() {
+	// fmt.Println(core.New(1))
+	// fmt.Println(core.New(2))
 
-	t1 := New(1)
-	t2 := New(2)
+	t1 := core.New(1)
+	t2 := core.New(2)
 	fmt.Printf("%v\n%v\n  %v\n\n", t1, t2, Same(t1, t2))
 }

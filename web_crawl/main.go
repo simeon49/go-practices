@@ -1,4 +1,4 @@
-package web_crawl
+package main
 
 import (
 	"fmt"
@@ -81,7 +81,7 @@ type foundUrls struct {
 
 var myFoundUrls = foundUrls{v: make(map[string]bool)}
 
-func Run() {
+func main() {
 	go Crawl("https://golang.org/", 4, fetcher)
 	time.Sleep(3 * time.Second)
 }
