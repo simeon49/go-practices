@@ -34,6 +34,7 @@ type update struct {
 }
 
 func init() {
+	fmt.Printf("start init....")
 	flag.Parse()
 }
 
